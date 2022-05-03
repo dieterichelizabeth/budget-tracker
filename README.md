@@ -10,3 +10,4 @@
 - [IndexedDB Transaction](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction)
 - [Navigator.onLine](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
 - [IndexedDB .getAll() Method](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll)
+- [IndexedDB .clear() Method](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/clear)

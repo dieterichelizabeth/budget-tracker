@@ -40,8 +40,6 @@ function saveRecord(record) {
 }
 
 function uploadFunds() {
-  // console.log("Uploading Funds...");
-
   // Open a new transaction to the db
   const newTransaction = db.transaction(["new_funds"], "readwrite");
 
@@ -51,9 +49,37 @@ function uploadFunds() {
   // Get all records from the data- assign to allFunds variable
   const allFunds = fundsObjectStore.getAll();
 
-  // If there are funds in allFunds, send it to the API
   allFunds.onsuccess = function () {
-    console.log(allFunds);
+    // If there are funds in allFunds, post to the API
+    if (allFunds.result.length > 0) {
+      fetch("/api/transaction/bulk", {
+        method: "POST",
+        body: JSON.stringify(allFunds.result),
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.message) {
+            throw new Error(data);
+          }
+          // Open a new transaction to the db
+          const transaction = db.transaction(["new_funds"], "readwrite");
+
+          // Access the data with key- `new_funds`
+          const fundsObjectStore = transaction.objectStore("new_funds");
+
+          // Clear the data
+          fundsObjectStore.clear();
+
+          alert("Funds are up to date!");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 }
 
