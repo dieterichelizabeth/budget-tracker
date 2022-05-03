@@ -1,7 +1,7 @@
 // Variable for connection
 let db;
 
-// Establish Connection - IndexDB database
+// Access the IndexDB database
 const request = indexedDB.open("budget", 1);
 
 // Handle database version changes
@@ -21,3 +21,15 @@ request.onsuccess = function (event) {
 request.onerror = function (event) {
   console.log(event.target.errorCode);
 };
+
+// Add or Subtract Funds w/out Internet Connection
+function saveRecord(record) {
+  // Open a new transaction to the db
+  const newTransaction = db.transaction(["new_funds"], "readwrite");
+
+  // Access the data with key- `new_funds`
+  const fundsObjectStore = newTransaction.objectStore("new_funds");
+
+  // Add new records to the objectStore
+  fundsObjectStore.add(record);
+}
