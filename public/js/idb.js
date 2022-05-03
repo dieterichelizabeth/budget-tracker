@@ -40,7 +40,21 @@ function saveRecord(record) {
 }
 
 function uploadFunds() {
-  console.log("Uploading Funds...");
+  // console.log("Uploading Funds...");
+
+  // Open a new transaction to the db
+  const newTransaction = db.transaction(["new_funds"], "readwrite");
+
+  // Access the data with key- `new_funds`
+  const fundsObjectStore = newTransaction.objectStore("new_funds");
+
+  // Get all records from the data- assign to allFunds variable
+  const allFunds = fundsObjectStore.getAll();
+
+  // If there are funds in allFunds, send it to the API
+  allFunds.onsuccess = function () {
+    console.log(allFunds);
+  };
 }
 
 // Listen for App to go "online" again
