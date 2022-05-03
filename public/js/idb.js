@@ -15,6 +15,11 @@ request.onupgradeneeded = function (event) {
 // If successful, save reference to db
 request.onsuccess = function (event) {
   db = event.target.result;
+
+  // If app goes online- send indexDB data to API
+  if (navigator.onLine) {
+    uploadFunds();
+  }
 };
 
 // Error Handling
@@ -33,3 +38,10 @@ function saveRecord(record) {
   // Add new records to the objectStore
   fundsObjectStore.add(record);
 }
+
+function uploadFunds() {
+  console.log("Uploading Funds...");
+}
+
+// Listen for App to go "online" again
+window.addEventListener("online", uploadFunds);
