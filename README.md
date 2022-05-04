@@ -15,3 +15,7 @@
 - [Manifest.json start_url](https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url)
 - [Manifest.json display](https://developer.mozilla.org/en-US/docs/Web/Manifest/display)
 - [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [Cache.open()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open)
+- [Cache.addAll()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll)
+- [Cache.keys()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys)
+- [Cache.delete()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete)

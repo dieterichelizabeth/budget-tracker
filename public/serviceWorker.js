@@ -24,11 +24,13 @@ self.addEventListener("install", function (event) {
 self.addEventListener("activate", function (event) {
   // console.log("Service worker activated!");
 
-  // Remove unwanted caches
+  // Remove old caches
   event.waitUntil(
+    // Loop through caches
     caches.keys().then(function (cacheNames) {
       return Promise.all(
         cacheNames.filter(function (cache) {
+          // If the key name in Cache Storage does not equal CACHE_NAME, delete it
           if (cache !== CACHE_NAME) {
             console.log("Cleaning Cache");
             return caches.delete(cache);
@@ -37,4 +39,9 @@ self.addEventListener("activate", function (event) {
       );
     })
   );
+});
+
+// Fetch Cached Files
+self.addEventListener("fetch", function (event) {
+  console.log("Offline: Service Worker Fetching files");
 });
