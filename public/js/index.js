@@ -144,6 +144,19 @@ function sendTransaction(isAdding) {
     });
 }
 
+function clearTransactions() {
+  fetch("/api/transaction/deleteAll", {
+    method: "DELETE",
+  })
+    .then((response) => {
+      return console.log("Previous Budget Deleted");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  document.location.reload();
+}
+
 document.querySelector("#add-btn").onclick = function () {
   sendTransaction(true);
 };
@@ -153,6 +166,5 @@ document.querySelector("#sub-btn").onclick = function () {
 };
 
 document.querySelector("#clear-btn").onclick = function () {
-  console.log("Clearing transactions");
-  // clearTransactions();
+  clearTransactions();
 };
