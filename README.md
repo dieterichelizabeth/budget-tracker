@@ -19,3 +19,4 @@
 - [Cache.addAll()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll)
 - [Cache.keys()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys)
 - [Cache.delete()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete)
+- [Cache.match()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match)
