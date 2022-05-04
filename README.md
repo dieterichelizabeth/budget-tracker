@@ -14,3 +14,4 @@
 - [Manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 - [Manifest.json start_url](https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url)
 - [Manifest.json display](https://developer.mozilla.org/en-US/docs/Web/Manifest/display)
+- [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
