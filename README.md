@@ -11,3 +11,6 @@
 - [Navigator.onLine](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
 - [IndexedDB .getAll() Method](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll)
 - [IndexedDB .clear() Method](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/clear)
+- [Manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
+- [Manifest.json start_url](https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url)
+- [Manifest.json display](https://developer.mozilla.org/en-US/docs/Web/Manifest/display)
