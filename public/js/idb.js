@@ -75,6 +75,8 @@ function uploadFunds() {
           fundsObjectStore.clear();
 
           alert("Funds are up to date!");
+
+          document.location.reload();
         })
         .catch((err) => {
           console.log(err);
